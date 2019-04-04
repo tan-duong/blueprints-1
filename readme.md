@@ -2,21 +2,30 @@
 
 ## Creating blueprint
 
+### Introducing lerna
+
+[Lerna](https://lernajs.io/) is a tool to manage multiple packages in 1 repository. _Global lerna installation will try to use local version._
+
 - clone/fork this repository
 - `lerna create`
 
 > Lerna exist in dev dependencies, binary command can be accessed locally in scope.
 
 > fish:
+- `lerna`
 - `eval npm bin lerna`
 - `eval yarn bin lerna`
 - `./node_modules/.bin/lerna`
 
 > bash/zsh
-- $(npm bin)/lerna
-- $(yarn bin lerna)
-- ./node_modules/.bin/lerna
+- `lerna`
+- `$(npm bin)/lerna`
+- `$(yarn bin lerna)`
+- `./node_modules/.bin/lerna`
 
+### Creating subpackage
+
+Executing `lerna create` will walk you through subpackage creation process.
 
 ## Plugin project structure
 
@@ -40,7 +49,12 @@ Used to keep files that should be copied over the
 
 ## Submitting blueprint
 
-- submit pull request
+### Pull request
+
+Following [git flow](https://nvie.com/posts/a-successful-git-branching-model/) model (master, next, release) submit a pull request from `feature/<name>` branch.
+
+### Finishing steps
+
 - publish to npm registry (done by maintainer)
 - update dashboard registry (done by core team)
 
