@@ -1,4 +1,4 @@
-# Ignite CLI Commands
+# Botics CLI Commands
 
 This document reviews the commands that the Ignite CLI provides. This guide
 assumes that you've installed Ignite. If you haven't, then check out our Getting
