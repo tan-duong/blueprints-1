@@ -1,4 +1,4 @@
-# Ignite CLI Documentation
+# Botics CLI Documentation
 
 *botics-cli* package is not published to npm yet.
 
