@@ -1,10 +1,12 @@
 # Ignite CLI Documentation
 
+*botics-cli* package is not published to npm yet.
+
 ## Quick Start
 
 * Installing
 * [Getting started](./quick-start/getting-started.md)
-* [Ignite CLI commands](./quick-start/ignite-commands.md)
+* [Ignite CLI commands](./quick-start/botics-commands.md)
 * [Project Structure - Andross](./quick-start/project-structure-andross.md)
 * [Project Structure - Bowser](./quick-start/project-structure-bowser.md)
 * [Using boilerplates](./quick-start/using-boilerplates.md)
@@ -22,4 +24,3 @@
 * Writing tests for plugins
 * Releasing plugins
 * Creating extensions
-

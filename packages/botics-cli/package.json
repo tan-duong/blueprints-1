@@ -1,5 +1,5 @@
 {
-  "name": "ignite-cli",
+  "name": "botics-cli",
   "version": "2.2.3",
   "description": "An unfair headstart for your React Native apps.",
   "bin": {

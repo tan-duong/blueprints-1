@@ -19,12 +19,12 @@ Open up `package.json` and add your desired info.
 
 ```json
 {
-  "name": botics,
+  "name": "botics",
   "version": "0.0.1",
   "description": "An Ignite CLI plugin for react-native-radio-buttons.",
   "license": "MIT",
   "devDependencies": {},
-  "url": botics,
+  "url": "botics",
   "author": {
     "name": "Robin Heinze",
     "email": "robin@infinite.red",
