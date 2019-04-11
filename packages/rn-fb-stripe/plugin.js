@@ -3,7 +3,7 @@
 /**
  * You may define your arguments here
  */
-const YOUR_STRIPE_PUB_KEY = '<YOUR STRIPE publishableKey>'
+let YOUR_STRIPE_PUB_KEY = '<YOUR STRIPE publishableKey>'
 /**
  * End arguments
  */
@@ -16,7 +16,9 @@ const APP_PATH = process.cwd()
 
 const add = async function(context) {
   // Learn more about context: https://infinitered.github.io/gluegun/#/context-api.md
-  const { ignite, filesystem } = context
+  const { ignite, filesystem, parameters } = context
+
+  YOUR_STRIPE_PUB_KEY = parameters.options.pubkey && parameters.options.pubkey
 
   ignite.patchInFile(`${APP_PATH}/ios/Podfile`, {
     insert: `pod 'Stripe', '~> 14.0.0'`,
@@ -55,7 +57,7 @@ const remove = async function(context) {
 
   ignite.patchInFile(`${APP_PATH}/ios/Podfile`, {
     delete: `pod 'Stripe', '~> 14.0.0'`
-  )
+  })
 
   ignite.patchInFile(`${APP_PATH}/ios/Podfile`, {
     delete: `import stripe from 'tipsi-stripe';
@@ -64,7 +66,7 @@ stripe.setOptions({
     merchantId: '', // Optional
     androidPayMode: 'test' // Android only
 });`
-  )
+  )}
 
 }
 

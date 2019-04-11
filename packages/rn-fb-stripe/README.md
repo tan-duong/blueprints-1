@@ -1,10 +1,6 @@
-# Configuration
-- Open plugin.js file
-- update arguments on top of file, then save it
-
 # Install it on host app
 - ignite attach
-- ignite add path/to/rn-fb-stripe
+- ignite add path/to/rn-fb-stripe --pubkey <your stripe publishableKey>
 - cd ios && pod install
 
 # Uninstall it
