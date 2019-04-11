@@ -1,5 +1,5 @@
 {
-  "name": "rn-fb-stripe",
+  "name": "botics-rn-fb-stripe",
   "version": "0.0.1",
   "description": "stripe blueprint for react native firebase scaffold",
   "author": "Tony <tony@crowdbotics.com>",

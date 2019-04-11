@@ -1,5 +1,12 @@
 // Ignite CLI plugin for Prototype
 // ----------------------------------------------------------------------------
+/**
+ * You may define your arguments here
+ */
+const YOUR_STRIPE_PUB_KEY = '<YOUR STRIPE publishableKey>'
+/**
+ * End arguments
+ */
 
 const NPM_MODULE_NAME = "tipsi-stripe"
 const NPM_MODULE_VERSION = "7.4.0"
@@ -11,7 +18,6 @@ const add = async function(context) {
   // Learn more about context: https://infinitered.github.io/gluegun/#/context-api.md
   const { ignite, filesystem } = context
 
-  //patching podfile
   ignite.patchInFile(`${APP_PATH}/ios/Podfile`, {
     insert: `pod 'Stripe', '~> 14.0.0'`,
     before: `end`
@@ -23,12 +29,11 @@ const add = async function(context) {
     version: NPM_MODULE_VERSION
   })
 
-  //patching App.js
   ignite.patchInFile(`${APP_PATH}/App.js`, {
     insert: `
 import stripe from 'tipsi-stripe';
 stripe.setOptions({
-    publishableKey: '<YOUR STRIPE publishableKey>',
+    publishableKey: ${YOUR_STRIPE_PUB_KEY},
     merchantId: '', // Optional
     androidPayMode: 'test' // Android only
 });`,
@@ -48,12 +53,10 @@ const remove = async function(context) {
   // remove the npm module and unlink it
   await ignite.removeModule(NPM_MODULE_NAME, { unlink: true })
 
-  // unpatching podfile
   ignite.patchInFile(`${APP_PATH}/ios/Podfile`, {
     delete: `pod 'Stripe', '~> 14.0.0'`
   )
 
-  // unpatching app.js
   ignite.patchInFile(`${APP_PATH}/ios/Podfile`, {
     delete: `import stripe from 'tipsi-stripe';
 stripe.setOptions({
@@ -65,5 +68,4 @@ stripe.setOptions({
 
 }
 
-// Required in all Ignite CLI plugins
 module.exports = { add, remove }
