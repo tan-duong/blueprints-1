@@ -66,7 +66,7 @@ stripe.setOptions({
     merchantId: '', // Optional
     androidPayMode: 'test' // Android only
 });`
-  )}
+})
 
 }
 
