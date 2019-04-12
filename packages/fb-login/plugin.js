@@ -6,10 +6,10 @@ const NPM_MODULE_VERSION = "0.8.0"
 
 const PLUGIN_PATH = __dirname
 const APP_PATH = process.cwd()
-let YOUR_PROJECT_NAME = 'YOUR_PROJECT_NAME' 
-let YOUR_COMPANY_NAME = 'YOUR_COMPANY_NAME'
-let YOUR_FB_APP_ID = 'YOUR_FB_APP_ID'
-let YOUR_FB_APP_NAME = 'YOUR_FB_APP_NAME'
+let YOUR_PROJECT_NAME = '' 
+let YOUR_COMPANY_NAME = ''
+let YOUR_FB_APP_ID = ''
+let YOUR_FB_APP_NAME = ''
 
 const EXAMPLE_FILE = "PrototypeExample.js.ejs"
 
@@ -21,6 +21,11 @@ const add = async function(context) {
   YOUR_COMPANY_NAME = parameters.options.com && parameters.options.com
   YOUR_FB_APP_ID = parameters.options.fbappid && parameters.options.fbappid
   YOUR_FB_APP_NAME = parameters.options.fbappname && parameters.options.fbappname
+
+  if(!YOUR_PROJECT_NAME || !YOUR_COMPANY_NAME || !YOUR_FB_APP_ID || !YOUR_FB_APP_NAME){
+    console.error('All parameters are required. You may miss them. Please double-check!')
+    return
+  }
 
   // install an NPM module and link it
   await ignite.addModule(NPM_MODULE_NAME, {

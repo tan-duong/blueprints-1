@@ -1,6 +1,7 @@
 # Install it on host app
 - ignite attach
-- ignite add /path/to/fb-login --project <projectname> --com <companyname> --fbappid <your fb app id> --fbappname <your fb app name>
+- ignite add /path/to/fb-login --project <projectname> --com <companyname> --fbappid <your fb app id> --fbappname <your fb app name> 
+Note: parameters are required
 - cd ios && pod install
 
 # Uninstall it
